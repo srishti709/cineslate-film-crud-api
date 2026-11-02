@@ -104,12 +104,16 @@ const connectToMongoDB = async () => {
     console.log(`  Database Host: ${mongoose.connection.host}`);
     console.log('----------------------------------------------------');
   } catch (error) {
+    // Extract username from MONGO_URI if available
+    const dbUserMatch = MONGO_URI.match(/mongodb\+srv:\/\/([^:]+):/);
+    const dbUser = dbUserMatch ? dbUserMatch[1] : 'your database user';
+    
     console.log('----------------------------------------------------');
     console.warn('⚠️  MongoDB Atlas Connection Notice:', error.message);
     console.log('👉 ACTION REQUIRED IN MONGODB ATLAS:');
     console.log('   1. In MongoDB Atlas > Network Access, click "Add IP Address"');
     console.log('      and choose "Allow Access from Anywhere" (0.0.0.0/0).');
-    console.log('   2. In Database Access, verify user "milan25cse_db_user" is created.');
+    console.log(`   2. In Database Access, verify user "${dbUser}" is created.`);
     console.log('   (The server is running with resilient in-memory fallback until Atlas is connected)');
     console.log('----------------------------------------------------');
     
