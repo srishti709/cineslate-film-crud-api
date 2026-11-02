@@ -137,7 +137,7 @@ Follow these steps if you are configuring a new MongoDB Atlas cluster:
      ```
    - Replace `<username>` and `<password>` with your credentials, and append the database name `/cineslate`:
      ```
-     mongodb+srv://milan25cse_db_user:STGrkhUyLbdV1bSw@cluster0.fbqf9ud.mongodb.net/cineslate?retryWrites=true&w=majority
+     mongodb+srv://srishti25cse_db_user:4NbNdaZXNrtjTbU9@srishti.fbqf9ud.mongodb.net/cineslate?retryWrites=true&w=majority
      ```
    - Paste this exact string into your `.env` file as `MONGO_URI`.
 
@@ -317,8 +317,8 @@ git commit -m "feat: complete CineSlate Short Film & Fest Screening Manager CRUD
 # 5. Rename default branch to main
 git branch -M main
 
-# 6. Add remote origin (replace milanrathee with your GitHub username)
-git remote add origin https://github.com/milanrathee/cineslate-film-crud-api.git
+# 6. Add remote origin (configured for srishti709)
+git remote add origin https://github.com/srishti709/cineslate-film-crud-api.git
 
 # 7. Push to GitHub
 git push -u origin main
